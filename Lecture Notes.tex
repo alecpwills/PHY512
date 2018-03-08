@@ -563,9 +563,50 @@ a_2e^{i\tilde{\omega}t/\hbar}\\ b_2e^{-i\tilde{\omega}t/\hbar}
 
 
 
+\section{Day 13: 5/6}
+
+Written on Wednesday; class tomorrow was canceled so no test tomorrow unfortunately.
+
+\subsection{Spin-1/2 Time-Dependent Perturbation}
+
+As last time, we have a two level system with energies $E_1$ and $E_2$. (Any two level system can be mapped onto the spin-1/2 problem, since it's basis is complete.) We have a Hamiltonian of the form $$ H=H_o+V(t)=\left(\begin{matrix}
+E_1 & 0 \\ 0 & E_2
+\end{matrix}\right)+\left(\begin{matrix}
+0 & \gamma e^{i\omega t} \\ \gamma e^{-i\omega t} & 0
+\end{matrix}\right).$$ Our state in general is also $$|\alpha(t)\ra = c_1(t)e^{-iE_1t/\hbar}|1\ra+c_2(t)e^{-iE_2t/\hbar}|2\ra.$$ With the assumptions of last time, we have $c_1(0)=1$ and $c_2(0)=0$. We found Rabi's formula $$|c_2(t)|^2 = \frac{\gamma^2}{\left(\frac{\hbar\tilde{\omega}_{21}}{2}\right)^2+\gamma^2}\sin^2\left[\sqrt{\left(\frac{\hbar\tilde{\omega}_{21}}{2}\right)^2+\gamma^2}\frac{t}{\hbar}\right],$$ where $\tilde{\omega}_{21}=\omega - (E_2-E_1)/\hbar$. So the transition between the states has a resonance at the natural energy separation frequency. We will see that this is a relatively general phenomenon.
+
+\subsection{Magnetic Resonance}
+
+Suppose we have $B(t)=B_o\hat{z}+B_1(\cos\omega t \hat{x}+\sin\omega t \hat{y})$ and we have a spin-1/2 particle in the $|+\ra$ state. We assume here that $B_o\gg B_1$. Now the Hamiltonian $$\Ham=-\mu\cdot B=\frac{e\hbar}{2mc}\left[B_o\sigma_z+B_1(\sigma_x\cos\omega t+\sigma_y\sin\omega t)\right]=\frac{-\hbar\omega_c}{2}\left[\left(\begin{matrix}
+1&0\\0&-1
+\end{matrix}\right)+\frac{B_1}{B_o}\left(\begin{matrix}
+0&e^{-i\omega t}\\e^{i\omega t}&0
+\end{matrix}\right)\right].$$
+
+\subsection{Masers}
+
+Suppose we have a pyramidal NH$_3$ molecule. The Coulombic interaction is minimized when N is equidistant from the three hydrogens in the plane, but there are two possible locations for this minimum to occur: $z=\pm a$, for some distance $a$. This leads to a bimodal potential that is symmetric: i.e., it is even under parity. But this would lead to a degeneracy, so we construct $$|\pm\ra = \frac{1}{\sqrt{2}}\left[|L\ra \pm |R\ra\right]$$ that are eigenstates of the parity operator for the left and right equilibrium states: $\Pi|\pm\ra = \pm |\pm\ra$. There is a finite probability of tunneling in this scenario, so the symmetric/antisymmetric states split the energy on their own before perturbation.
+
+Now, adding a time-dependent electric field $\vec{E}(t)=E\cos\omega t \hat{z}$. This gives a term in the Hamiltonian $$H(t)=-\vec{p}\cdot \vec{E}=-q\hat{z}E\cos\omega t$$. Thus $$\Ham=\Ham_o+V(t) = \left(\begin{matrix}
+E_+&0\\0&E_-
+\end{matrix}\right)+\frac{qE\hat{z}}{2}[e^{i\omega t}+e^{-i\omega t}],$$ where the second term is odd under parity. Therefore, the potential perturbation only connects even parity states to odd parity states and vice versa. So the potential matrix must be off-diagonal in this basis. This yields a form $$\Ham = \left(\begin{matrix}
+E_+&0\\0&E_-
+\end{matrix}\right)-\frac{qEz_\pm}{2}\left(\begin{matrix}
+0&e^{i\omega t}\\e^{-i\omega t}&0
+\end{matrix}\right) + \mathrm{a\ Hermitian\ conjugate.}$$ We note that the conjugate arises from the form $\la+|z|-\ra \cos\omega t$ being the off-diagonal terms, so we say these expectation values are just $z_\pm$.
+
+\subsection{Formal Perturbation Theory}
+
+The time-dependent Schrodinger equation $$i\hbar |\psi(t)\ra = [\Ham_o+V(t)]|\psi(t)\ra \to [i\hbar \ptl_t - \Ham_o]|\psi(t)\ra = V(t)|\psi(t)\ra$$ A clever substitution into the derivative side yields $$\left[e^{-i\Ham_o t/\hbar}i\hbar\ptl_t e^{i\Ham_o t/\hbar}\right]|\psi(t)\ra = V(t)|\psi(t)\ra \to i\hbar \ptl_t [e^{i\Ham_ot/\hbar}|\psi(t)\ra] = [e^{i\Ham_ot/\hbar}V(t)e^{-i\Ham_ot/\hbar}]e^{i\Ham_ot/\hbar}|\psi(t)\ra.$$ We relabel the "rotated" potential and transformed state as $|\psi(t)\ra_i$ and $V(t)_i$ to be the "interaction" representation potential and state. We note that this is a kind of in-between picture of the Schrodinger and Heisenberg picture (using the full Hamiltonian in $U(t)$), in that it splits the time-dependence among both the operators and the states as opposed to one or the other. But we note that this splitting is arbitrary now: some fraction can go into the operators and the rest into the states -- that is, this can be generalized into any intermediate representation varying from the Schrodinger to Heisenberg pictures.
+
+Now, we have $$i\hbar\ptl_t|\psi(t)\ra_i = V_i(t)|\psi(t)\ra_i,$$ where at $t=0$ all pictures coincide with $|\psi(t=0)\ra_i\equiv |\psi(0)\ra.$ Since this is a first order equation, it can be formally integrated to find: $$|\psi(t)\ra_i = \bb{T}\exp\left[\frac{i}{\hbar}\int_0^t dt' V_i(t')\right]
+|\psi(0)\ra.$$ Normally it would be an issue for $V_i(t)$ to depend on time, since it wouldn't commute with itself. That would lead to problems in order of integration upon successive expansion. That is, $$|\psi(t)\ra_i = \bb{T}\left[\Id - \frac{i}{\hbar}\int_0^t dt' V(t')-\frac{1}{2!\hbar^2}\int_0^t\int_0^t dt'dt'' V(t')V(t'')+\dots\right]|\psi(0)\ra.$$ But $\bb{T}$ tells you how to order things such that they are causal: $$\bb{T}(V(t'),V(t''))= \Theta(t'-t'')V(t')V(t'')+\Theta(t''-t')V(t'')V(t')$$ such that the largest time is on the left and smaller times are on the right, in a causal fashion. In this way, we could insert them above to find \begin{align*}\bb{T}\int_0^t\int_0^tdt'dt''V(t')V(t'') &= \int_0^tdt'\int_0^{t'}dt'' V(t')V(t'')+\int_0^tdt''\int_0^{t''}dt'V(t'')V(t')\\&=2\int_0^tdt''\int_0^{t''}dt'V(t'')V(t')\end{align*} after relabeling the integration variables. Now we have the perturbation ordered by powers of $V_i(t)$, so if small we can just approximate with the first order: \begin{mdframed} $$|\psi(t)\ra_{i,1}\approx \left[\Id - \frac{i}{\hbar}\int_0^t dt' V_i(t')\right]|\psi(0)\ra.$$ \end{mdframed}
 
 
 
+\subsection{Fermi's Golden Rule}
 
+
+Suppose we have a potential $V(t)=\Theta(t)\cdot V_o$ -- i.e., one that is turned on very suddenly by a switch then is constant afterwards. If the atom is in the ground state, what is the probability of finding it in state $|n\ra$? We denote the perturbed ground state with $|0(t)\ra_{i, 1}\equiv |0(t)\ra$. We are looking for $$\la n |0(t)\ra = -\frac{i}{\hbar}\int_0^t dt' \la n|V_i(t')|0\ra.$$ Now we note that $V_i$ is constant at and after $t=0$, so the matrix element comes out. We further note that this potential is \textbf{in the interaction picture}, so we have $$\la n |V_i(t')|0\ra = \la n | e^{i\Ham_ot/\hbar}V(t')e^{-i\Ham_ot/\hbar}|0\ra = \la n| e^{iE_nt/\hbar}V(t')e^{-iE_0t/\hbar}|0\ra.$$ We can now say that $$P_{0,n}(t)\simeq |\la n|0(t)\ra|^2 \equiv \frac{1}{\hbar^2}|\la n |V_o|0\ra|^2 \left|\int_0^t dt' e^{i\omega_{n0}t}\right|^2.$$ Carrying the integration out and squaring yields \begin{mdframed} $$P_{0,n}(t)\simeq \frac{|V_{n0}|^2}{E_{n0}^2} 4\sin^2\left[\frac{\omega_{n0}t}{2}\right] = \frac{t^2|V_{n0}|^2}{\hbar^2} \frac{\sin^2\left[\frac{\omega_{n0}t}{2}\right]}{\left(\frac{\omega_{n0}t}{2}\right)^2}.$$ \end{mdframed} This looks like an oscillatory graph enveloped by a $1/\omega^2$ curve at fixed $t$. The height of the central peak at a given time is on the order of $t^2$, while the width is of the order $1/t$. So we see that there is a band of states within the range that we could fall. The probability to migrate to a band of states, though is $$P_{0,n}(t)n(E_n)dE_n,$$ where $n(E_n)=dN/dE_n$ is the number density of states in that given interval $dE_n$. We note that $dE_n$ falls as $1/t$, and $P_{0,n}(t)$ goes as $t^2$ in the band. So combined together, this gives a probability proportional to $t$, which if divided by time gives the rate of transition.
 
 \end{document}

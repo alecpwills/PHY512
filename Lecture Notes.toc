@@ -1,10 +1,10 @@
 \select@language {english}
-\contentsline {section}{\numberline {1}Day 1: 1/23}{2}{section.1}
-\contentsline {subsection}{\numberline {1.1}Continuous Symmetries}{2}{subsection.1.1}
-\contentsline {section}{\numberline {2}Day 2: 1/25}{5}{section.2}
-\contentsline {subsection}{\numberline {2.1}Continuous Symmetries}{5}{subsection.2.1}
+\contentsline {section}{\numberline {1}Day 1: 1/23}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Continuous Symmetries}{3}{subsection.1.1}
+\contentsline {section}{\numberline {2}Day 2: 1/25}{6}{section.2}
+\contentsline {subsection}{\numberline {2.1}Continuous Symmetries}{6}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Spin Precession}{6}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Euler Representation}{6}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.3}Euler Representation}{7}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}Finite Dimensional Representations}{7}{subsection.2.4}
 \contentsline {section}{\numberline {3}Day 3: 1/30}{8}{section.3}
 \contentsline {subsection}{\numberline {3.1}Euler Rotation Representation}{8}{subsection.3.1}
@@ -49,3 +49,9 @@
 \contentsline {subsection}{\numberline {12.1}Paschen-Back Effect}{34}{subsection.12.1}
 \contentsline {subsection}{\numberline {12.2}Time Dependent Perturbation Theory}{34}{subsection.12.2}
 \contentsline {subsubsection}{\numberline {12.2.1}Spin-1/2 Exact Solution}{35}{subsubsection.12.2.1}
+\contentsline {section}{\numberline {13}Day 13: 5/6}{36}{section.13}
+\contentsline {subsection}{\numberline {13.1}Spin-1/2 Time-Dependent Perturbation}{36}{subsection.13.1}
+\contentsline {subsection}{\numberline {13.2}Magnetic Resonance}{36}{subsection.13.2}
+\contentsline {subsection}{\numberline {13.3}Masers}{37}{subsection.13.3}
+\contentsline {subsection}{\numberline {13.4}Formal Perturbation Theory}{37}{subsection.13.4}
+\contentsline {subsection}{\numberline {13.5}Fermi's Golden Rule}{38}{subsection.13.5}
