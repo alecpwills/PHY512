@@ -55,3 +55,9 @@
 \contentsline {subsection}{\numberline {13.3}Masers}{37}{subsection.13.3}
 \contentsline {subsection}{\numberline {13.4}Formal Perturbation Theory}{37}{subsection.13.4}
 \contentsline {subsection}{\numberline {13.5}Fermi's Golden Rule}{38}{subsection.13.5}
+\contentsline {section}{\numberline {14}Day 14: Class Cancelled}{39}{section.14}
+\contentsline {section}{\numberline {15}Day 15: 3/20}{39}{section.15}
+\contentsline {subsection}{\numberline {15.1}Sudden Interaction}{39}{subsection.15.1}
+\contentsline {subsection}{\numberline {15.2}Harmonic Perturbations}{40}{subsection.15.2}
+\contentsline {subsection}{\numberline {15.3}Scattering of Atoms by Light}{41}{subsection.15.3}
+\contentsline {subsection}{\numberline {15.4}Cross-Section}{42}{subsection.15.4}
