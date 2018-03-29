@@ -65,3 +65,6 @@
 \contentsline {section}{\numberline {17}Day 17: 3/27}{43}{section.17}
 \contentsline {subsection}{\numberline {17.1}Sum Rule}{44}{subsection.17.1}
 \contentsline {subsection}{\numberline {17.2}Cross-Section for Ionization}{44}{subsection.17.2}
+\contentsline {section}{\numberline {18}Day 18: 3/29}{46}{section.18}
+\contentsline {subsection}{\numberline {18.1}Ionization Cross-Section Redo}{46}{subsection.18.1}
+\contentsline {subsection}{\numberline {18.2}Variational Analysis}{47}{subsection.18.2}

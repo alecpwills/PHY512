@@ -668,4 +668,32 @@ We now have, pulling all the constant factors out, $$V_{ki} = \frac{\hbar\vec{q}
 &= \frac{16 k^2\hbar^3 \alpha}{m^2\omega}\cdot\frac{1}{a_Z^5(a_Z^{-2}+q^2)^4}.\end{align*} (???) In class derivation was wrong. This was closer but doesn't match Sakurai up to a factor of $2k_n$.
 
 
+\section{Day 18: 3/29}
+
+\subsection{Ionization Cross-Section Redo}
+We shine light $\gamma$ onto an atom and ionize the electron from $|i\ra$ to the continuum $|n\ra$. Fermi's golden rule states that the rate of probability $$w_{if}\simeq \frac{2\pi}{\hbar}|V_{ni}|^2\delta_{ni},$$ where $\delta_{ni}$ is the energy delta function matching the photon energy to the difference in energy between initial and final states. Since the electron is excited into the continuum, there is a density of final states. To preserve this, we make the probability rate infinitesimal and multiply by an infinitesimal number of accessible nearby states (?) $$dw_{ij}= \frac{2\pi}{\hbar}|V_{ni}|^2 \delta_{ni}dN,$$ where the final state is a plane wave (normalized to some volume) and the initial state is the ground Coulomb state. We note that the number of final states is the phase-space volume (normalized to a cube with length $2\pi$) times the space volume (?) $$N_f=\frac{L^3\cdot 4\pi k_f^3}{3(2\pi)^3}\cdot 2,$$ where the factor of 2 comes from the multiple available spins. This is a space-based counting of available plane waves. So $$dN=\frac{L^3k_f^2}{\pi^2}dk_f.$$ Now we note that we have $dw_{if}$ but we are really concerned with the cross section, which again is (in our calculations) the energy scattered ($w_{ij}\cdot\hbar\omega$) divided by the incoming energy flux $\la|\vec{S}|\ra$ of the light. We also recall in the $ka\ll 1$ regime, $$|V_{in}|^2 = \left(\frac{eA_o}{mc}\right)^2 |\la n|e^{i\vec{k}\cdot\vec{x}}\vec{\epsilon}\cdot\vec{p}|i\ra|^2,$$ so that $$\frac{d\sigma_{in}}{dk_n} = 4\pi^2\alpha \frac{\hbar}{m^2\omega} P_{ni}^2 \frac{L^3k_n^2}{\pi^2}\delta_{ni}$$ after everything is plugged back in. $P_{ni}$ ends up evaluating to $$P_{ni}=\frac{8\pi}{(1+q^2a_z^2)^2},$$ which yields a final $$\frac{d\sigma_{in}}{dk_n} = \frac{4\alpha}{\pi}\cdot\frac{\hbar}{m^2\omega}\cdot(a_Z^3k_n^2)\cdot|\vec{\epsilon}\cdot\hbar\vec{q}|^2\cdot\frac{(8\pi)^2}{(1+q^2a_z^2)^4}.$$ We see at high momentum transfer $\vec{q}$ the cross section falls off with the factor of $q^{-6}$, and small cross section grows as $q^2$. 
+
+Dimensional analysis shows this having matching dimensions on both sides, although the dimensions are of volume for some reason...
+
+\subsection{Variational Analysis}
+
+We conclude time-dependent perturbation theory and move on to variational methods. This depends on making a guess regarding the nature of the solution, depending on certain parameters. We calculate the guessed (GROUND) function's energy and then minimize it with respect to the parameters. This is an important method that has resulted in many Nobel prizes: good guessing is an art for complicated situations.
+
+We consider the Helium atom, composed of 2 positive and 2 negative charges. We again consider the protons fixed in place, and have $$\Ham=\Ham_1+\Ham_2-\frac{e^2}{r_{12}},$$ where the final interaction term is what makes this problem not solvable. We have $$\Ham_1 = \frac{p_1^2}{2m}-\frac{e^2}{r_1}-\frac{e^2}{|\vec{r}_1-\vec{d}|}, \ \ \ \Ham_2= \frac{p_2^2}{2m}-\frac{e^2}{r_2}-\frac{e^2}{|\vec{r}_2-\vec{d}|},$$ where each electron's radial vector points to a single hydrogen and the vector $\vec{d}$ is the distance vector between the two hydrogens. We want to find $\Ham\Psi(\vec{r}_1,\vec{r}_2)=E\Psi(\vec{r}_1,\vec{r}_2).$
+
+In the variational approach, we guess the best possible outcome for the ground state solution. We note that each individual electron will see a charge between $+1$ and $+2$, due to the Coulombic screening caused by the other electron. So we guess $$\Psi_Z(\vec{r}_1,\vec{r}_2) = \psi_Z(\vec{r}_1)\psi_Z(\vec{r}_2), \ \ \ Z\in[1,2].$$ If $Z$ is optimal, it minimizes the guessed energy. We form the ratio $$\epsilon(Z)=\frac{\la \Psi_Z|\Ham|\Psi_z\ra}{\la\Psi_Z|\Psi_Z\ra}.$$ Thus $Z$ is fixed by the condition $$\ptl_Z\epsilon = 0.$$ This should be a minimum only, not any other extremum. This is why we can only use this method for ground state calculations, because any other state could be deformed into the ground state energy.
+
+For He, we use a Coulombic wavefunction for each electron with effective charge $Z$: $$\Psi_Z(\vec{r}_1,\vec{r}_2)=\psi_Z(\vec{r}_1)\psi_Z(\vec{r}_2), \ \ \ \psi_Z(\vec{r}_i)=\frac{1}{\sqrt{\pi}a_Z^{3/2}}e^{-r_i/a_z}, a_Z=\frac{a_o}{Z}.$$ We note that these functions are already normalized, so $\la\Psi_Z|\Psi_Z\ra=1$. Thus we have \begin{align*}
+\la \Psi_Z|\Ham|\Psi_z\ra &= \la \psi^1_Z\psi^2_Z|\Ham_1+\Ham_2-\frac{e^2}{r_{12}}|\psi_Z^1\psi_Z^2\ra\\
+&= 2 \la \psi_Z^1|\Ham_1|\psi_Z^1\ra - \la\psi^1_Z\psi^2_Z|\frac{e^2}{r_{12}}|\psi_Z^1\psi_Z^2\ra,
+\end{align*} where we've used the symmetry to simplify the first term (somehow).
+
+Now \begin{align*}
+\la \psi|\Ham_1|\psi\ra &= \la \psi | \frac{p^2}{2m}-\frac{e^2}{r_1}-\frac{e^2}{|\vec{r}_1-\vec{d}|}|\psi\ra \\
+&= \la \psi|\frac{p^2}{2m}-\frac{2e^2}{r}|\psi\ra\\
+&= \frac{-e^2}{2a_o}(-Z^2) + \frac{2}{Z}\la \psi|\frac{-Ze^2}{r}|\psi\ra \\
+&= \frac{-e^2}{2a_o}(-Z^2+4Z), 
+\end{align*} where the second equality holds from the symmetry of the problem, the third holds from the virial theorem, and the fourth holds from the Coulomb energies.
+
+
 \end{document}
