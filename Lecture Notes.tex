@@ -668,6 +668,8 @@ We now have, pulling all the constant factors out, $$V_{ki} = \frac{\hbar\vec{q}
 &= \frac{16 k^2\hbar^3 \alpha}{m^2\omega}\cdot\frac{1}{a_Z^5(a_Z^{-2}+q^2)^4}.\end{align*} (???) In class derivation was wrong. This was closer but doesn't match Sakurai up to a factor of $2k_n$.
 
 
+
+
 \section{Day 18: 3/29}
 
 \subsection{Ionization Cross-Section Redo}
@@ -694,6 +696,148 @@ Now \begin{align*}
 &= \frac{-e^2}{2a_o}(-Z^2) + \frac{2}{Z}\la \psi|\frac{-Ze^2}{r}|\psi\ra \\
 &= \frac{-e^2}{2a_o}(-Z^2+4Z), 
 \end{align*} where the second equality holds from the symmetry of the problem, the third holds from the virial theorem, and the fourth holds from the Coulomb energies.
+
+
+
+
+\section{Day 19: Albany}
+
+\section{Day 20: 4/5}
+
+I made a 15/30 on the test, while the average was a 21. /sigh
+
+\subsection{Test Overview}
+
+Show that any vector operator transforms as $[J_i, V_j]=i\hbar \epsilon_{ijk}V_k$. This depends entirely on knowing that $$D^\dagger(R)V_iD(R)=R_{ij}V_j,$$ or that the components of the vector operator just rotate as in the Cartesian coordinate system. Knowing $D(R)=e^{-i\vec{J}\cdot\vec{\epsilon}/\hbar}$, we can expand to find \begin{align*}
+(\Id+iJ_\epsilon/\hbar)V_i(\Id-iJ_\epsilon/\hbar)&=(\Id+G_\epsilon)_{ij}V_j\\
+[J_\epsilon, V_i] &= -i\hbar (G_\epsilon)_{ij}V_j\\
+[J_m, V_i] &= -i\hbar (G_m)_{ij}V_j, \ \ \ (G_m)_{ij}=\epsilon_{imj}\\
+[J_m, V_i] &= i \hbar \epsilon_{mij}V_j.
+\end{align*} The next part used this. With $V_o = V_z, V_{\pm}=(V_x\pm iV_y)/\sqrt{2},$ we had $[J_+, V_-]=i\hbar V_o$. So $$\frac{\la \alpha' j j-1|V_-|\alpha jj\ra}{\la \alpha' jj| V_o |\alpha jj\ra} = \frac{i}{\sqrt{2j}},$$ after inputting the commutation relation into the denominator and cancelling. The matrix element on top cancels with what is left over on the bottom.
+
+For problem two I basically did it right besides accidentally forgetting to square a two somewhere. Naturally. Problem 3 was alright. I'm tired.
+
+\subsection{Many Particles}
+
+We note that distinguishable ensembles of particles have wavefunctions with no specific symmetry under permutation, because they're labeled or whatever.
+
+Indistinguishable particles have $N!$ possible permutations with the same energy. For fermions and bosons, $$P_{ij}|\psi_F(123\dots ij \dots N)\ra = -|\psi_F(123\dots ij \dots N)\ra, \ \ \ P_{ij}|\psi_B(123\dots ij \dots N)\ra = |\psi_B(123\dots ij \dots N)\ra.$$ That is, bosonic wavefunctions for many particle systems are symmetric under pair exchange while fermionic ones are antisymmetric.
+
+Zahed notes a good way to get the signs in the antisymmetric one is to use a determinant: $$\psi_{1\to N}(r_1\dots r_n)= \frac{1}{\sqrt{N!}} \left|\begin{matrix}
+\phi_1(r_1) & \dots & \phi_1(r_N)\\
+\vdots & \dots & \vdots \\
+\phi_N(r_1) & \dots & \phi_N(r_N)
+\end{matrix}\right|.$$
+
+For example, we consider two spin-1/2 particles, who can combine into a singlet $|00\ra$ state or a triplet state $|11\ra, |1-1\ra, |10\ra$. Since the triplet states have integer spin, they must be bosonic and thus symmetric. The only remaining choice for antisymmetry is now $|00\ra$, which yields the familiar forms.
+
+If other quantum numbers describe the system, then it is possible that the triplet states are accessible and the antisymmetry occurs in the other numbers. We note that these states arose from $\vec{S}=\vec{S}_1+\vec{S}_2 = \vec{0}+\vec{1}$.
+
+For 3 particles, we have \begin{align*}\vec{S}&=\vec{S}_1+\vec{S}_2+\vec{S}_3\\ &= \vec{\frac{1}{2}} + \vec{\frac{1}{2}} + \vec{\frac{1}{2}}\\
+&= (\vec{0}+\vec{1})+\vec{\frac{1}{2}} \\ &= \vec{\frac{1}{2}} + \vec{\frac{1}{2}} + \vec{\frac{3}{2}},
+\end{align*} where we combine pairwise until we get the final answer.
+
+\subsection{Young Tableaux and Young's Rule}
+
+We note for our given system we have $\boxed{\uparrow}, \boxed{\downarrow}$ or $\boxed{1}, \boxed{2}$. We define box multiplication as $$\boxed{df}\times\boxed{df} = \boxed{df}/\boxed{df-1} \oplus \boxed{df}\boxed{df+1}.$$
+?? Look up somewhere coherent I guess.
+
+
+\section{Day 21: 4/10}
+
+\subsection{Young Tableau}
+
+This is a convenient way to visualize the symmetry of many-particle representations, and identify the structure of the symmetry.
+
+We begin with a $\square$ that can have inside of it an index representing the state. For example, in spin-1/2 there are $2s+1=2$ states, yielding $\boxed{\uparrow},\boxed{\downarrow}$ corresponding to $\boxed{1},\boxed{2}$. For one particle, a single box with a single label is all that is allowed, yielding only two possible states.
+
+For two particles, we define box multiplication as follows: $$\square\times\square = \begin{matrix}
+\square \\ \square
+\end{matrix} + \begin{matrix}
+\square & \square
+\end{matrix}.$$ The labeling rules of such a structure are as follows: moving vertically down a column, the label must \textbf{always increase}, while moving horizontally across a row allows for \textbf{same values or increasing}. So, for the spin-1/2 labels 1 and 2, we find that only $$\begin{matrix}
+\boxed{1}\\\boxed{2}
+\end{matrix}, \begin{matrix}
+\boxed{1}\boxed{1}, & & \boxed{1}\boxed{2}, & & \boxed{2}\boxed{2}
+\end{matrix}$$ are the only possible states. The Young tableau is a useful way to keep track of the number of symmetries allowed in many particle systems.
+
+The rules are as follows:
+
+\textbf{Stacking.} Box multiplication allows stacking either horizontally to the right or vertically on the bottom, always left-justifying the result. For example, using indices to denote which particle we're keeping track of, a three particle system is represented as $$\square_1\times(\square_2\times\square_3)=\square_1\times\left(\begin{matrix}
+\square_2\\\square_3
+\end{matrix}+\begin{matrix}
+\square_2\square_3
+\end{matrix}\right) = \left(\begin{matrix}
+\square_1\\\square_2\\\square_3
+\end{matrix}+\begin{matrix}
+\square_2& \square_1 \\\square_3 & 
+\end{matrix}\right) + \left(\begin{matrix}
+\square_2 & \square_3\\\square_1 &
+\end{matrix}+\begin{matrix}
+\square_1\square_2\square_3
+\end{matrix}\right)$$
+
+
+\textbf{Labeling.} The labels depend on the start block, which is always the top left hand block. In, for example a spin $N$ system with $2N+1$ states, labeling downward along a column \textbf{must always yield a strictly increasing sequence} of labels. No repetition or smaller values. Along a row, repetition is allowed but it must be increasing otherwise. If one were to run out of labels going downwards, for example, then that state is not allowed to exist.
+
+\textbf{Counting.} To count the number of total states for a given representation block, we \textbf{insert the number of labels $N$ into the starting block.} We then decrement by units of one going down the column, and increment by units of one going across the row. The numerator will be the product of all of the entries: $$\begin{matrix}
+\boxed{N} & \boxed{N+1}&\boxed{N+2}\\
+\boxed{N-1} & \boxed{N} & \\
+\boxed{N-2} &&
+\end{matrix}$$ As an example, the above figure gives a numerator of $N^2(N-1)(N-2)(N+1)(N+2)$. We then form the denominator by \textbf{hook counting}. Here, we start at the top row and insert a right-angled hook for each column, and count the number of boxes we cross. We then repeat for the rows below. This yields a denominator of $1\cdot 3\cdot 5\cdot 1\cdot 3 \cdot 1$. So the number of available states in that given block representation above is $$\# = \frac{N^2(N-1)(N-2)(N+1)(N+2)}{1\cdot3\cdot5\cdot1\cdot3\cdot1}$$ in that 6 particle system.
+
+\textbf{All horizontal labels are symmetric with respect to swapping, and all vertical labels are antisymmetric with respect to pair exchange.}
+
+
+\subsection{SU(N) Groups}
+
+In a two particle system, we expect $N^2$ possible states given $N$ labels. This is verified by the counting method we defined above.
+
+\subsection{Quark Model}
+
+In the 1960s, accelerators were being advanced and many new particles were being discovered that didn't agree with the proton and neutron fundamental particle picture. So it was postulated that the nuclear components were fermion composites. Given that observed particles were fermionic, they had to have fermion constituents or else no fermion particles could have been observed.
+
+Gellmann and Zweig (independently?) put forth that there were three flavors of fermion components: $u, d, s$ (up, down, and strange). In reality there are six, but these $t,b,c$ (top, bottom, charm) quark particles weren't available to the energy levels at the time. Anyway, for this model to work the 3 flavors must have fractional charge. They defined $$Q=I_3+\frac{Y}{2},$$ where $Q$ is the electric charge of the quark, $I_3$ is its isospin, and $Y$ is its hypercharge. In the $I_3\times Y$ space, these particles form a triangle with vertices $$\{f=(I_3, Y): u=(1/2, 1/3), d = (-1/2, 1/3), s=(0, -2/3)\}.$$ They also postulated that the baryon number of the protons and neutrons was $B=1$, and so each constituent has baryon number $B_u=B_d=B_s=1/3$. Physicists understood well the electric charge conservation and baryon number conservation, but the hypercharge and isospin were new concepts. With these three particles, how many particles can we expect?
+
+This is the same system as our three particle system from before: $$\square_1\times(\square_2\times\square_3)=\square_1\times\left(\begin{matrix}
+\square_2\\\square_3
+\end{matrix}+\begin{matrix}
+\square_2\square_3
+\end{matrix}\right) = \left(\begin{matrix}
+\square_1\\\square_2\\\square_3
+\end{matrix}+\begin{matrix}
+\square_2& \square_1 \\\square_3 & 
+\end{matrix}\right) + \left(\begin{matrix}
+\square_2 & \square_3\\\square_1 &
+\end{matrix}+\begin{matrix}
+\square_1\square_2\square_3
+\end{matrix}\right).$$ Using our hook counting rules with $N=3$, we get $$\# = 1+8+8+10=27$$ new particles that could be formed out of these quarks. These states are totally antisymmetric, have mixed symmetry, or are completely symmetric. We focus on the $10_S$ states (the 10 symmetric states).
+
+\subsection{Color Discovery}
+
+Consider the 10-plet given by our ten possible $\square_1\square_2\square_3$ unique combinations. We let $(123)\leftrightarrow(uds)$, and consider $$\boxed{u}\boxed{u}\boxed{u}.$$ This is a totally symmetric state, but filled with fermions that obey the Pauli exclusion principle. So this should not be allowed. But we consider that each flavor state also has a space state vector, and naively we would assume we can antisymmetrize the space state and be okay: $\Psi(123)=\psi_f(123)\psi_x(123).$ But this turned out to not be satisfactory. Antisymmetrizing the spatial state costs energy, since all ground states are symmetric. We would have to place these up quarks into three different energy states, which would thus allow the states to decay: but into what?
+
+So with this problem, it was postulated that there is a new quantum number, called color, for quarks: $$\Psi(123)=\psi_f(123)\psi_x(123)\psi_c(123),$$ that requires three color charges to be completely antisymmetric. So the ground state 10-plet is described by $$\Psi(123)=\psi_f(123)\psi_x(123)\psi_c(123) = \square\square\square_f\times\square\square\square_x\times\begin{matrix}
+\square\\\square\\\square
+\end{matrix}_c.$$
+
+This matched observations at the time: \begin{align*}
+s=0&: uuu\to \Delta^{++}, \ \ \ uud\to \Delta^+, \ \ \ udd \to \Delta^0, \ \ \ ddd\to \Delta^-\\
+s=-1&: uus\to\Sigma^+, \ \ \ uds\to \Sigma^0, \ \ \ dds\to\Sigma^-\\
+s=-2&: uss\to \Xi^+, \ \ \ dss\to\Xi^-\\
+s=-3&: sss\to\Omega^-
+\end{align*}
+
+\subsection{Second Quantization}
+
+We now note that labeling the state with the particle is bad if all particles are the same: $$|\alpha\ra = \sum_p \sigma_p|\phi_{\alpha_1}(1)\phi_{\alpha_2}(2)\dots\phi_{\alpha_N}(N)\ra,$$ because we have to keep track of the symmetries and antisymmetries and as $N$ grows large it becomes very inefficient to do so. Say we want to describe an atom with 100 electrons. Forming the Slater determinant yields the determinant of a matrix with 1000 entries, and the number of states is $100!$, which very quickly becomes not worth keeping track of even on a computer.
+
+Dirac noticed a way to deal with this: we label the states in terms of occupation number. We have N identical particles, each with identical wavefunctions and spectra $\{\epsilon_\alpha,\phi_\alpha(x)\}$. We let $\alpha=1\to\infty$ label the different states, and we want to express the state in terms of occupation number $$|N_1N_2\dots N_\infty\ra$$ subject to $$\sum_{\alpha}N_\alpha=N.$$ We have infinitely many states labeled by their occupation number.
+
+$$|N_1N_2\dots N_\infty\ra = \left(\frac{N_1!N_2!\dots N_\infty!}{N!}\right) \sum_{[p]}\sigma_p |[\beta_1][\beta_2]\dots[\beta_\infty]\ra,$$ where the numerator takes care of the fact that the bosons don't see the permutations.
+
+We take an aside to the 1D harmonic oscillator, with $H=\hbar\omega(a^\dagger a+1/2)$, $a|n\ra = \sqrt{n}|n-1\ra$ and $a^\dagger|n\ra = \sqrt{n+1}|n+1\ra$. We can think of the state $|n\ra$ as either a single state with energy $(n+1/2)\hbar\omega$ or as a large number of particles with energy $\hbar\omega/2$.
+
 
 
 \end{document}
