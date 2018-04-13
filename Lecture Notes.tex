@@ -839,5 +839,42 @@ $$|N_1N_2\dots N_\infty\ra = \left(\frac{N_1!N_2!\dots N_\infty!}{N!}\right) \su
 We take an aside to the 1D harmonic oscillator, with $H=\hbar\omega(a^\dagger a+1/2)$, $a|n\ra = \sqrt{n}|n-1\ra$ and $a^\dagger|n\ra = \sqrt{n+1}|n+1\ra$. We can think of the state $|n\ra$ as either a single state with energy $(n+1/2)\hbar\omega$ or as a large number of particles with energy $\hbar\omega/2$.
 
 
+\section{Day 22: 4/12}
+
+\subsection{Second Quantization}
+
+For many particles, we can't label the states with each particle. There are too many, and it becomes inefficient. For indistinguishable particles, as is the case in quantum mechanics, we move from the particle/energy labeling to the occupation number in a given state labeling.
+
+For example, in the harmonic oscillator $\la x|n\ra = \phi_n(x)\propto H_n(x)e^{-x^2/2a^2},$ with $N|n\ra = a^\dagger a|n\ra = n|n\ra$. We note that $a|n\ra = \sqrt{n}|n-1\ra$ and $a^\dagger|n\ra = \sqrt{n+1}|n+1\ra$, and that $[a, a^\dagger]=1$. We can view the state $|n\ra$ as a single state with energy $E_n$ or as a state occupied with $N$ quanta. In the occupation interpretation, we have $$|n\ra = \frac{(a^\dagger)^n}{\sqrt{n!}}|0\ra.$$ The proposal is to take the state in terms of the individual particles $|\psi_{a_1}\dots\phi_{a_n}\ra$, which is highly degenerate and hard to keep track of, and which leads to the symmetry needing to be accounted for: $$|\phi_{a_1}\dots\phi_{a_n}\ra_S = \frac{1}{\sqrt{n!}}\sum_p S(p)\sigma_p|\dots\ra,$$ and for large $n$ the state quickly are bad to keep track of signatures and permutations.
+
+Dirac suggested that we relabel $$|\phi_{a_1}\dots \phi_{a_n}\ra_S \to |[N_1]\dots[N_\infty]\ra,$$ where $[N_1]$ refers to the occupation number of a given state, not particle label.
+
+For bosons (indistinguishable, integer spin): $$|N_1\dots N_\infty\ra = \frac{(a^\dagger)^{N_1}}{\sqrt{N_1!}}\dots \frac{(a^\dagger)^{N_\infty}}{\sqrt{N_\infty!}}|0_1\dots 0_\infty\ra,$$ while for fermions we have a form obeying the Pauli exclusion principle:
+
+$$ |N_1\dots N_\infty\ra = (a_1)^{N_1}\dots (a_\infty)^{N_\infty}|0_1\dots 0_\infty\ra,$$ where the $N_i$ are either zero or one. Both are subject to the condition that $$\sum_i N_i = N,$$ the total number of particles. We note that for bosons: $$[a_i, a^\dagger_j] = \delta_{ij}, \ \ [a_i,a_j]=[a^\dagger_i, a^\dagger_j]=0,$$ while for fermions we have $$\{a_i, a^\dagger_j\}= \delta_{ij}, \ \ \{a_i,a_j\}=\{a^\dagger_i, a^\dagger_j\}=0.$$ We note the fermionic anti-commutator results in antisymmetrizing: pairwise exchange of the operators yields the negative result. 
+
+Now we want to express $\Ham$ in this occupancy number basis, as  well as all the operators. In the particle-label basis, we have a simple form $$\Ham=\sum_i^N h_i + \frac{1}{2}\sum_{i\neq j} V_{ij} + \frac{1}{3!}\sum_{i\neq j\neq k} V_{ijk}, \ \ \ h_i = \frac{-\hbar^2}{2m}\nabla^2 + U(x_i).$$ We first look at $h_i$, and note we want the matrix element in the new basis $$\la [N] | \sum_i h_i |[N]\ra.$$ We recall the form of $|[N]\ra$: $$|N_1\dots N_\infty\ra = \left(\frac{N_1!\dots N_\infty!}{N!}\right)^{1/2} \sum_p S(p)\sigma_p|[\phi_{N_1}]\dots[\phi_{N_\infty}]\ra.$$ This gives us \begin{align*} \la [N]|\sum_i h_i |[N]\ra &= \left[\frac{N_1!\dots (N_\alpha-1)!\dots N_\infty!}{N!}\right]\left[\frac{N_1!\dots (N_\beta-1)!\dots N_\infty!}{N!}\right] \sqrt{N_\alpha N_\beta}\\
+&\cdot \sum_{[p],[p']}S(p)S(p')\sigma_p\sigma_{p'} \la [\phi_1]\dots [\phi_\alpha]\dots [\phi_\infty]| \sum_i h_i |[\phi_1]\dots[\phi_\beta]\dots[\phi_\infty]\ra.
+\end{align*} Now we note that each $h_i$ is for a single particle, and it only sees single states. We've chosen subsets of states above, $[\phi_\alpha]$ and $[\phi_\beta]$ to single out that the Hamiltonian actually acts on, and we note that the double counting within the sum (brought about by orthogonality removing the non-affected states) gives an overall factor of $$\frac{(N-1)!}{N_1!\dots(N_\alpha-1)!(N_\beta-1)!\dots N_\infty!},$$ where the $N-1$ is from the fact we have selected a state to consider and the others are from the overcounting (?). This gives us \begin{align*} 
+\la[N]|\sum_i h_i |[N]\ra &= \la [\phi_\alpha]|\sum_i h_i |[\phi_\beta]\ra\\ &= \sum_{\alpha,\beta} \frac{\sqrt{N_\alpha N_\beta}}{N} \la \phi_\alpha|\sum_i h_i |\phi_\beta\ra,	
+\end{align*} and we now note that the Hamiltonian sum comes out since each $h_i$ is identical, giving $$\la [\phi_\alpha]|\sum h_i |[\phi_\beta]\ra = \sum_i \la [\phi_\alpha]|h|[\phi_\beta]\ra = N \la [\phi_\alpha]|h|[\phi_\beta]\ra,$$ so we finally get, with $$h_{\alpha\beta} = \la \phi_\alpha| \frac{-\hbar^2}{2m}\nabla^2+U|\phi_\beta\ra,$$ that $$\la[N]|\sum h_i|[N]\ra = \sum_{\alpha,\beta} \sqrt{N_\alpha N_\beta} h_{\alpha\beta}.$$
+
+Now we note that with Dirac, we have $$\hat{h}=\sum_{\alpha,\beta} h_{\alpha\beta}a^\dagger_\alpha a_\beta \implies \la [N]|\hat{h}|[N]\ra = \la [N]|\sum_{\alpha,\beta} h_{\alpha\beta} a^\dagger_\alpha a_\beta |[N]\ra,$$ which for diagonal elements gives something proportional to $\sqrt{N_\alpha N_\beta}\delta_{\alpha\beta},$ and allows terms one off the diagonal as well. So we've converted $$\hat{h} = \sum_{\alpha,\beta} h_{\alpha\beta}a^\dagger_\alpha a_\beta \leftrightarrow \sum_{i=1}^N h_i.$$ We note in two body interactions, then, the construction carries: $$\frac{1}{2}\sum_{i\neq j} V_{ij} \leftrightarrow \frac{1}{2}\sum_{\alpha\beta, \delta\gamma} \la \phi_\alpha\phi_\beta|V|\phi_\gamma\phi_\delta\ra a_\alpha^\dagger a_\beta^\dagger a_\delta a_\gamma,$$ where we note the swap of the second pair of indices in the creation/annihilation operators is important for the antisymmetrization of fermions.
+
+
+\subsection{Hartree-Fock Approximation}
+
+We note that interactions make any problem complicated, and we need ways to treat systems with a large number of them. We assume a Hamiltonian of the form $$\Ham = \sum_{\alpha,\beta}h_{\alpha\beta}a^\dagger_\alpha a_\beta + \frac{1}{2}\sum_{\alpha\beta, \delta\gamma} V_{\alpha\beta,\gamma\delta} a_\alpha^\dagger a_\beta^\dagger a_\delta a_\gamma.$$ We will use perturbation theory to find new energies for the diagonalized $h_{\alpha\beta}$ case.
+
+That is, $$h_{\alpha\beta}|\phi_\alpha\ra = \epsilon_\alpha|\phi_\alpha\ra,$$ so we're essentially diagonalizing the single-particle and constructing the many particle system from there: $$ |B\ra = = \frac{(a^\dagger)^{N_1}}{\sqrt{N_1!}}\dots \frac{(a^\dagger)^{N_\infty}}{\sqrt{N_\infty!}}|0_1\dots 0_\infty\ra\overset{g.s.}{\to} \frac{(a_{a_0}^\dagger)^N}{\sqrt{N!}}|0\ra,$$ and for fermions $$|F\ra =  a_{a_1}^\dagger\dots a^{\dagger N}_{a_N} |0\ra \overset{g.s.}{\to}\prod_{i=1}^N a^\dagger_{a_i}|0\ra,$$ where we note that $|0\ra = |0_1\dots\ra$.
+
+We carry out first order perturbation theory. We note that in the ground states, we have $$E_B^0 = N\epsilon_{a_0}= \frac{N}{2}\hbar\omega, \ \ \ E_F^0 = \sum_{\epsilon_1}^{\epsilon_F} \epsilon_i = \sum_{n=0}^{N-1}(n+1/2)\hbar\omega.$$
+
+The first order corrections, then, are \begin{align*}
+E_F^1 &= \la F|\frac{1}{2}\sum_{\alpha\beta, \delta\gamma} V_{\alpha\beta,\gamma\delta} a_\alpha^\dagger a_\beta^\dagger a_\delta a_\gamma |F\ra,\\
+E_B^1 &= \la B |\frac{1}{2}\sum_{\alpha\beta, \delta\gamma} V_{\alpha\beta,\gamma\delta} a_\alpha^\dagger a_\beta^\dagger a_\delta a_\gamma | B \ra.
+\end{align*} In general, for either $|F\ra$ or $|B\ra$, we have $$E^1 =  \frac{1}{2}\sum_{\alpha\beta, \delta\gamma}\la [N] | V_{\alpha\beta,\gamma\delta} a_\alpha^\dagger a_\beta^\dagger a_\delta a_\gamma | [N]\ra,$$ and we note for bosons or fermions (keeping track): $a_\delta a_\gamma = \pm a_\gamma a_\delta.$
+
+After a series of exchanges using commutation relations, we will end up with $$E^1 = \frac{1}{2}\sum_{\alpha\beta} \la \phi_{\alpha'}\phi_{\beta'}|V|\phi_\alpha\phi_\beta\ra [N_\alpha N_\beta - N_\alpha] + \frac{1}{2} \sum_{\alpha} \la \phi_\alpha\phi_\alpha|V|\phi_\alpha\phi_\alpha\ra N_\alpha(N_\alpha-1),$$ where the second term is for bosons only.
 
 \end{document}
