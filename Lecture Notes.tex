@@ -877,4 +877,66 @@ E_B^1 &= \la B |\frac{1}{2}\sum_{\alpha\beta, \delta\gamma} V_{\alpha\beta,\gamm
 
 After a series of exchanges using commutation relations, we will end up with $$E^1 = \frac{1}{2}\sum_{\alpha\beta} \la \phi_{\alpha'}\phi_{\beta'}|V|\phi_\alpha\phi_\beta\ra [N_\alpha N_\beta - N_\alpha] + \frac{1}{2} \sum_{\alpha} \la \phi_\alpha\phi_\alpha|V|\phi_\alpha\phi_\alpha\ra N_\alpha(N_\alpha-1),$$ where the second term is for bosons only.
 
+
+\section{Day 23: 4/17}
+
+\subsection{Hartree-Fock Approximation}
+
+This is one of the most basic many body problem simplifications in the second quantization regime. It expresses many body states in the space of occupation numbers of the states themselves, not the bodies.
+
+We begin with recalling the transition from the single particle Hamiltonian to the second quantized: \begin{align*}
+1: \ \ \Ham &= \sum_{i=1}^N \left(\frac{p_i^2}{2m}+U(x_i)\right) +\frac{1}{2}\sum_{i\neq j} V_{ij} + \dots \equiv \sum_i h_i + \frac{1}{2}\sum_{i\neq j} V_{ij}+\dots\\
+2: \ \ \Ham &= \sum_{\alpha,\beta} \la \alpha|h|\beta\ra a^\dagger_{\alpha}a_\beta + \frac{1}{2} \sum_{\alpha\beta,\gamma\delta} \la \alpha\beta|V|\gamma\delta\ra a^\dagger_\alpha a^\dagger_\beta a_\delta a_\gamma + \dots
+\end{align*} We recall that the second quantized form has no reference to the particle labels, and instead only looks at different energy state labels. We address the interaction term by perturbation theory.
+
+First, we diagonalize our $$\Ham_o=\sum_{\alpha,\beta} \la \alpha|h|\beta\ra a^\dagger_{\alpha}a_\beta.$$ This essentially amounts to diagonalizing the single particle states: $h|\alpha\ra = \epsilon_\alpha |\alpha\ra$. Projecting to the configuration space yields the normal Schrodinger equation: $$\left(-\frac{\hbar^2}{2m}\nabla^2+U(x)\right)\phi_\alpha(x)=\epsilon_\alpha\phi_\alpha(x).$$
+
+We first consider the fermionic case, where the zeroth order \textbf{ground state} wavefunction in the energy basis is $$|F^0\ra = \prod_{i=1}^{N}a^\dagger_{\alpha_i}|0\ra \equiv |1_{\alpha_1}\dots 1_{\alpha_N}\ra (|000\dots\ra).$$ The label $i$ here refers to the different energy states, and not particles. For reference, we note the particle label form below to see how much more complicated it would be, keeping in mind the Slater determinant would be required to express the antisymmetrized particle wavefunctions: $$|F^0\ra = \frac{1}{\sqrt{N!}} \sum_{[p]}\sigma[p]|\phi_{p_1}\dots\phi_{p_N}\ra.$$ The signature of the permutations here are important, and why the Slater determinant would be used.
+
+Now, the zeroth order energy for the occupation number state: \begin{align*}
+E^0 &= \la F^0|\Ham_o|F^0\ra \\ &= \la F^0| \sum_{\alpha,\beta} \la \alpha|h|\beta\ra a^\dagger_{\alpha}a_\beta |F^0\ra\\
+&= \la F^0|\sum_\alpha \epsilon_{\alpha} a^\dagger_{\alpha}a_\alpha |F^0\ra\\
+&= \la F^0 | \sum_{\alpha}\epsilon_\alpha N_\alpha |F^0\ra\\
+&= \sum_{i=1}^{N} \epsilon_{\alpha_i},
+\end{align*} where we note each $N_\alpha$ is just 1 here because of the Pauli exclusion principle (although spin would admit degeneracy, we aren't considering that here).
+
+The first order correction in perturbation theory is just the expectation value of the perturbing potential with respect to the unperturbed states: $$\epsilon^1 = \la F^0|\frac{1}{2} \sum_{\alpha\beta,\gamma\delta} \la \alpha\beta|V|\gamma\delta\ra a^\dagger_\alpha a^\dagger_\beta a_\delta a_\gamma|F^0\ra.$$ We here note that the annihilation operators $a_\delta$ and $a_\gamma$ must act on states within the Fermi surface, or else the resulting term would be zero (since you can't annihilate a state that doesn't already exist). This truncates the sum to states below the Fermi level. We further note that the creation operators must then fill the same states, or else there would be an orthogonal state in the inner product meaning a zero term in the sum.
+
+Now we note there are two possible ways to contract these two pairs of operators: $$a^\dagger_\alpha a^\dagger_\beta a_\delta a_\gamma \to a^\dagger_\alpha a_\gamma a^\dagger_\beta a_\delta, \ \ \ -a^\dagger_\alpha a_\delta a^\dagger_\beta a_\gamma.$$ We recall again, that for fermions: $$\{a_i, a_j^\dagger\} = \delta_{ij}, \ \ \ \{a_i,a_j\}=\{a_i^\dagger, a_j\dagger\} = 0.$$ This means that in contracting $\alpha$ with $\gamma$, we get a negative sign moving $\gamma$ past $\delta$ and \textbf{something else happens that he brushes over because the commuting of the different annihilation/creation operators doesn't cancel and he just jumped to the result.} In the end, we get \begin{align*}
+\epsilon^1 &= \frac{1}{2}\sum_{\alpha\beta,\gamma\delta} V_{\alpha\beta,\gamma\delta}\left[\la N_{\alpha \gamma}\ra \la N_{\beta\delta}\ra - \la N_{\alpha\delta}\ra \la N_{\beta\gamma}\ra\right]\\
+&= \frac{1}{2}\sum_{\alpha,\beta} \left[\la \alpha\beta | V | \alpha\beta\ra - \la \alpha\beta|V|\beta\alpha\ra\right].
+\end{align*}
+
+ We note the antisymmetry present in this energy addition, and the second equality follows from the fact that the $N_{ij}=a^\dagger_i a_j \propto \delta_{ij}$ for fermions. So in total, $$E_F = \sum_{\alpha}^{F} \epsilon_\alpha + \frac{1}{2} \sum_{\alpha,\beta}^{F}\la \alpha\beta|V|\alpha\beta\ra_A,$$ where the matrix element subscript denotes the antisymmetrized form above and $F$ denotes the Fermi level.
+ 
+ Now we note that for bosons, the occupation number can be different from one. The same derivation keeping the occupation number yields, in general and including a bosonic term that vanishes for fermions, that $$E_{F/B} = \sum_{\alpha}^{G} \epsilon_\alpha + \frac{1}{2}\sum_{\alpha,\beta}^{G}\la \alpha\beta|V|\alpha\beta\ra_{A/S} N_\alpha N_\beta + \frac{1}{2}\sum_{\alpha}^G \la \alpha\alpha|V|\alpha\alpha\ra N_\alpha(N_\alpha-1).$$ The diagonal term on the end vanishes because for fermions, $N_\alpha=1$ (disregarding degeneracy-allowed sharing).
+ 
+ \subsection{Mean Field Approximation}
+ 
+ We recall that we chose $h|\alpha\ra = \epsilon_\alpha|\alpha\ra$ in the above derivation of the corrections to the energy. We now want to improve on the choice of basis $\{\epsilon_\alpha,|\alpha\ra\}.$ We look for a new basis which minimizes the \textbf{corrected} energy, subject to a variational constraint on $$\frac{\delta\epsilon}{\delta \phi_{\bar{\alpha}}^*(x)}.$$ We will think of $\epsilon$ as a function of any general basis $\phi_{\bar{\alpha}}$.
+ 
+ We first project to the configurational space, recalling that for the total energy a sum is necessary: \begin{align*}
+ \epsilon[|\alpha\ra] &= \sum_{\alpha} \la \alpha|\Ham|\alpha\ra \\
+ \epsilon[\phi_\alpha(x)] &= \sum_{\alpha} \int d\vec{x} \phi_\alpha^*(x) h(\vec{x})\phi_\alpha(\vec{x})\\ &+ \frac{1}{2}\sum_{\alpha,\beta} \int d\vec{x}d\vec{x}' \phi^*_\alpha(\vec{x})\phi^*_\beta(\vec{x}') V(\vec{x},\vec{x}')\phi_\alpha(\vec{x})\phi_\beta(\vec{x}')\\
+ &- \frac{1}{2}\sum_{\alpha,\beta} \int d\vec{x}d\vec{x}' \phi^*_\alpha(\vec{x})\phi^*_\beta(\vec{x}') V(\vec{x},\vec{x}')\phi_\beta(\vec{x})\phi_\alpha(\vec{x}').
+ \end{align*}
+ 
+ \textbf{The argument given here is iffy.}
+ We now vary this energy with respect to $\phi_{\bar{\alpha}}^*(\vec{y})$, where for generality we needn't require the same argument. For simplicity first consider the first part of the energy: $$\frac{\delta \epsilon[\phi_\alpha(\vec{x})] }{\delta \phi_{\bar{\alpha}}^*(\vec{y})} = \sum_{\alpha} \int d\vec{x} \frac{\delta \phi_\alpha(\vec{x})}{\delta \phi_{\bar{\alpha}}^*(\vec{y})} h(\vec{x})\phi_\alpha(\vec{x}) + \dots,$$ where the varied term in the integrand must be $\delta(\vec{x}-\vec{y})\delta_{\alpha\bar{\alpha}}$ for "support." (????) In the end we see \begin{align*}
+ \frac{\delta \epsilon[\phi_\alpha(\vec{x})] }{\delta \phi_{\bar{\alpha}}^*(\vec{y})} &= h(\vec{y})\phi_{\bar{\alpha}}(\vec{y})\\
+ & + \sum_{\beta} \left[\int d\vec{x}' \phi_\beta^*(\vec{x}')V(\vec{y}, \vec{x}')\phi_\beta(\vec{x}')\right]\phi_{\bar{\alpha}}(\vec{y})\\
+ &-\sum_{\beta} \left[\int d\vec{x}' \phi_\beta^*(\vec{x}')V(\vec{y},\vec{x}') \phi_{\bar{\alpha}}(\vec{x}')\right]\phi_\beta(\vec{y})\\
+ &= \epsilon_{\bar{\alpha}}\phi_{\bar{\alpha}}(\vec{y}).
+ \end{align*} This is the Hartree-Fock equation.
+ 
+ The \textbf{Hartree, or direct} term is the added integral -- it represents the potential energy of the (probability) density. The subtracted term is the \textbf{Fock, or exchange} term -- it represents the overlap between the old and the new states in the potential. The exchange term is nonlocal.
+ 
+ \subsubsection{Mean Field Approximation}
+ 
+ This approximation is the result of ignoring the exchange term in the HF equation. Explicitly, $$\left[-\frac{\hbar^2}{2m} \nabla^2 + U(\vec{x})+U^H(\vec{x})\right]\phi_{\bar{\alpha}}(\vec{x})=\epsilon_{\bar{\alpha}}\phi_{\bar{\alpha}}(\vec{x}),$$ where in this Hartree approximation we have $$U^H(\vec{x})=\sum_{\beta} \int d\vec{x}' V(\vec{x}, \vec{x}') |\phi_\beta(\vec{x'})|^2 = \int d\vec{x}' V(\vec{x}, \vec{x}')n(\vec{x}'), \ \ \ n(\vec{x}')=\sum_{\beta} |\psi_\beta(\vec{x}')|^2.$$ That is, the Hartree potential is just the integral over the mean density created by all of the particles in the system. But to find this itself, we have to solve the problem. This leads to iterative solutions to a converging answer. The exchange term has been excluded here, even though it might account for 30-40\% of the energy correction, due to the complexity of nonlocality.
+ 
+ \subsubsection{Thomas-Fermi Approximation} Here an ansatz $n(\vec{x})$ is used: $$n(\vec{x}) = \sum_{\bar{\alpha}} \frac{1}{Z^{-1} (e^{E_{\bar{\alpha}}(\vec{x})/T}+1)}, \ \ E_{\bar{\alpha}}(\vec{x}) = \frac{p_{\bar{\alpha}}^2}{2m}+U(\vec{x}), \ \ Z=e^{-\mu/T}.$$
+
+
+Now the Kohn-Shame is the default now: LDA (local density approximation). The exchange term is treated as a Fermi liquid/degenerate Fermi gas, i.e. the $T$ in $Z$ goes to 0 for finite $\mu$.
 \end{document}

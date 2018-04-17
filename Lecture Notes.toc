@@ -3,23 +3,23 @@
 \contentsline {subsection}{\numberline {1.1}Continuous Symmetries}{3}{subsection.1.1}
 \contentsline {section}{\numberline {2}Day 2: 1/25}{6}{section.2}
 \contentsline {subsection}{\numberline {2.1}Continuous Symmetries}{6}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Spin Precession}{6}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.2}Spin Precession}{7}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}Euler Representation}{7}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}Finite Dimensional Representations}{8}{subsection.2.4}
 \contentsline {section}{\numberline {3}Day 3: 1/30}{9}{section.3}
 \contentsline {subsection}{\numberline {3.1}Euler Rotation Representation}{9}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Orbital Angular Momentum}{9}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.2}Orbital Angular Momentum}{10}{subsection.3.2}
 \contentsline {subsection}{\numberline {3.3}Addition of Angular Momentum}{11}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Vector Operators}{11}{subsection.3.4}
+\contentsline {subsection}{\numberline {3.4}Vector Operators}{12}{subsection.3.4}
 \contentsline {section}{\numberline {4}Day 4: 2/1}{12}{section.4}
 \contentsline {subsection}{\numberline {4.1}Vector Operators}{12}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Spherical Harmonics}{12}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.2}Spherical Harmonics}{13}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}Tensors}{13}{subsection.4.3}
 \contentsline {subsection}{\numberline {4.4}Irreducible Tensor Operators}{14}{subsection.4.4}
 \contentsline {subsection}{\numberline {4.5}Composition of Irreducible Representations}{14}{subsection.4.5}
-\contentsline {section}{\numberline {5}Day 5: 2/6}{14}{section.5}
-\contentsline {subsection}{\numberline {5.1}Wigner-Eckart Theorem}{14}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2}Discrete Symmetries}{15}{subsection.5.2}
+\contentsline {section}{\numberline {5}Day 5: 2/6}{15}{section.5}
+\contentsline {subsection}{\numberline {5.1}Wigner-Eckart Theorem}{15}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Discrete Symmetries}{16}{subsection.5.2}
 \contentsline {subsection}{\numberline {5.3}Parity}{16}{subsection.5.3}
 \contentsline {section}{\numberline {6}Day 6: 2/8}{17}{section.6}
 \contentsline {subsection}{\numberline {6.1}Discrete Translational Symmetry}{17}{subsection.6.1}
@@ -27,14 +27,14 @@
 \contentsline {section}{\numberline {7}Day 7: 2/13}{19}{section.7}
 \contentsline {subsection}{\numberline {7.1}Time Reversal Symmetries}{19}{subsection.7.1}
 \contentsline {subsection}{\numberline {7.2}Wigner Theorem}{20}{subsection.7.2}
-\contentsline {subsection}{\numberline {7.3}Spin-1/2 Representation}{20}{subsection.7.3}
+\contentsline {subsection}{\numberline {7.3}Spin-1/2 Representation}{21}{subsection.7.3}
 \contentsline {subsection}{\numberline {7.4}Kramer's Theorem}{22}{subsection.7.4}
 \contentsline {subsection}{\numberline {7.5}3D Problems}{22}{subsection.7.5}
 \contentsline {subsection}{\numberline {7.6}The Coulomb Problem}{23}{subsection.7.6}
 \contentsline {section}{\numberline {8}Day 8: 2/15}{23}{section.8}
 \contentsline {subsection}{\numberline {8.1}Coulomb Problem}{23}{subsection.8.1}
-\contentsline {subsection}{\numberline {8.2}Perturbation Theory}{25}{subsection.8.2}
-\contentsline {subsection}{\numberline {8.3}Time-Independent Stationary Perturbation}{25}{subsection.8.3}
+\contentsline {subsection}{\numberline {8.2}Perturbation Theory}{26}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.3}Time-Independent Stationary Perturbation}{26}{subsection.8.3}
 \contentsline {section}{\numberline {9}Day 9: 2/20}{26}{section.9}
 \contentsline {subsection}{\numberline {9.1}Perturbation Theory}{26}{subsection.9.1}
 \contentsline {subsubsection}{\numberline {9.1.1}Quadratic Stark Effect}{27}{subsubsection.9.1.1}
@@ -42,43 +42,48 @@
 \contentsline {subsection}{\numberline {10.1}Linear Stark Effect}{28}{subsection.10.1}
 \contentsline {subsection}{\numberline {10.2}Spin-Orbit Coupling}{29}{subsection.10.2}
 \contentsline {section}{\numberline {11}Day 11: 2/27}{30}{section.11}
-\contentsline {subsection}{\numberline {11.1}Spin-Orbit Coupling}{30}{subsection.11.1}
+\contentsline {subsection}{\numberline {11.1}Spin-Orbit Coupling}{31}{subsection.11.1}
 \contentsline {subsection}{\numberline {11.2}Zeeman Effect}{32}{subsection.11.2}
 \contentsline {subsection}{\numberline {11.3}The Weak-Field Limit}{33}{subsection.11.3}
-\contentsline {section}{\numberline {12}Day 12: 3/1}{34}{section.12}
-\contentsline {subsection}{\numberline {12.1}Paschen-Back Effect}{34}{subsection.12.1}
+\contentsline {section}{\numberline {12}Day 12: 3/1}{35}{section.12}
+\contentsline {subsection}{\numberline {12.1}Paschen-Back Effect}{35}{subsection.12.1}
 \contentsline {subsection}{\numberline {12.2}Time Dependent Perturbation Theory}{35}{subsection.12.2}
 \contentsline {subsubsection}{\numberline {12.2.1}Spin-1/2 Exact Solution}{36}{subsubsection.12.2.1}
 \contentsline {section}{\numberline {13}Day 13: 5/6}{37}{section.13}
 \contentsline {subsection}{\numberline {13.1}Spin-1/2 Time-Dependent Perturbation}{37}{subsection.13.1}
 \contentsline {subsection}{\numberline {13.2}Magnetic Resonance}{37}{subsection.13.2}
-\contentsline {subsection}{\numberline {13.3}Masers}{37}{subsection.13.3}
+\contentsline {subsection}{\numberline {13.3}Masers}{38}{subsection.13.3}
 \contentsline {subsection}{\numberline {13.4}Formal Perturbation Theory}{38}{subsection.13.4}
 \contentsline {subsection}{\numberline {13.5}Fermi's Golden Rule}{39}{subsection.13.5}
 \contentsline {section}{\numberline {14}Day 14: Class Cancelled}{40}{section.14}
 \contentsline {section}{\numberline {15}Day 15: 3/20}{40}{section.15}
 \contentsline {subsection}{\numberline {15.1}Sudden Interaction}{40}{subsection.15.1}
 \contentsline {subsection}{\numberline {15.2}Harmonic Perturbations}{41}{subsection.15.2}
-\contentsline {subsection}{\numberline {15.3}Scattering of Atoms by Light}{41}{subsection.15.3}
+\contentsline {subsection}{\numberline {15.3}Scattering of Atoms by Light}{42}{subsection.15.3}
 \contentsline {subsection}{\numberline {15.4}Cross-Section}{43}{subsection.15.4}
 \contentsline {section}{\numberline {16}Day 16: 3/23}{44}{section.16}
 \contentsline {section}{\numberline {17}Day 17: 3/27}{44}{section.17}
-\contentsline {subsection}{\numberline {17.1}Sum Rule}{44}{subsection.17.1}
+\contentsline {subsection}{\numberline {17.1}Sum Rule}{45}{subsection.17.1}
 \contentsline {subsection}{\numberline {17.2}Cross-Section for Ionization}{45}{subsection.17.2}
 \contentsline {section}{\numberline {18}Day 18: 3/29}{47}{section.18}
 \contentsline {subsection}{\numberline {18.1}Ionization Cross-Section Redo}{47}{subsection.18.1}
 \contentsline {subsection}{\numberline {18.2}Variational Analysis}{48}{subsection.18.2}
 \contentsline {section}{\numberline {19}Day 19: Albany}{49}{section.19}
 \contentsline {section}{\numberline {20}Day 20: 4/5}{49}{section.20}
-\contentsline {subsection}{\numberline {20.1}Test Overview}{49}{subsection.20.1}
+\contentsline {subsection}{\numberline {20.1}Test Overview}{50}{subsection.20.1}
 \contentsline {subsection}{\numberline {20.2}Many Particles}{50}{subsection.20.2}
-\contentsline {subsection}{\numberline {20.3}Young Tableaux and Young's Rule}{50}{subsection.20.3}
+\contentsline {subsection}{\numberline {20.3}Young Tableaux and Young's Rule}{51}{subsection.20.3}
 \contentsline {section}{\numberline {21}Day 21: 4/10}{51}{section.21}
 \contentsline {subsection}{\numberline {21.1}Young Tableau}{51}{subsection.21.1}
 \contentsline {subsection}{\numberline {21.2}SU(N) Groups}{52}{subsection.21.2}
 \contentsline {subsection}{\numberline {21.3}Quark Model}{52}{subsection.21.3}
 \contentsline {subsection}{\numberline {21.4}Color Discovery}{53}{subsection.21.4}
-\contentsline {subsection}{\numberline {21.5}Second Quantization}{53}{subsection.21.5}
-\contentsline {section}{\numberline {22}Day 22: 4/12}{54}{section.22}
-\contentsline {subsection}{\numberline {22.1}Second Quantization}{54}{subsection.22.1}
+\contentsline {subsection}{\numberline {21.5}Second Quantization}{54}{subsection.21.5}
+\contentsline {section}{\numberline {22}Day 22: 4/12}{55}{section.22}
+\contentsline {subsection}{\numberline {22.1}Second Quantization}{55}{subsection.22.1}
 \contentsline {subsection}{\numberline {22.2}Hartree-Fock Approximation}{57}{subsection.22.2}
+\contentsline {section}{\numberline {23}Day 23: 4/17}{58}{section.23}
+\contentsline {subsection}{\numberline {23.1}Hartree-Fock Approximation}{58}{subsection.23.1}
+\contentsline {subsection}{\numberline {23.2}Mean Field Approximation}{60}{subsection.23.2}
+\contentsline {subsubsection}{\numberline {23.2.1}Mean Field Approximation}{61}{subsubsection.23.2.1}
+\contentsline {subsubsection}{\numberline {23.2.2}Thomas-Fermi Approximation}{62}{subsubsection.23.2.2}
