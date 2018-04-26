@@ -939,4 +939,105 @@ Now we note there are two possible ways to contract these two pairs of operators
 
 
 Now the Kohn-Shame is the default now: LDA (local density approximation). The exchange term is treated as a Fermi liquid/degenerate Fermi gas, i.e. the $T$ in $Z$ goes to 0 for finite $\mu$.
+
+\section{Day 24: 4/19}
+\subsection{Scattering}
+
+We note that this is different than the bound state problem, but it can be cast in a similar manner. This is inherently a time-dependent process. We have some projectile and target, both quantum mechanical in nature, and we want to know what is the probability of finding the projectile at a certain angle at long times.
+
+We assume the target is localized in space (which is not entirely the case in the Coulomb problem), i.e. we can physically separate the projectile ad target both before and after the process, otherwise the scattering can't be defined.
+
+So naturally, to start off, we simplify by violating the first assumption: we define the projectile by a plane wave (which is obviously not localized). We note, though, that the problem could be mapped onto a stationary one and localized particles can be expanded as plane waves in the Fourier transform components.
+
+Suppose we have an incoming wave $$\phi(t,x) = \frac{1}{(2\pi)^{3/2}} e^{-iEt/\hbar + ikz},$$ i.e. $\vec{k}_{inc}=k\hat{z}$. We model the target as a perturbing potential $V(\vec{x})$ that is time-INDEPENDENT. We note that even though the incoming wave is a plane wave in the $z$-direction, the scattered wave is in general a spherical waveform.
+
+Since the target is time-independent potential, total energy must be conserved. So at $t=-\infty$, we have $$E_i = E_p = \frac{\hbar^2k^2}{2m} = E_f = \frac{\hbar^2k^{'2}}{2m},$$ or succinctly we get a condition on the wavenumbers: $|\vec{k}|=|\vec{k}'|$. The magnitudes must be the same, but the direction does not in general have to be. So the transfer of momentum vector $\vec{q}$ is just a change in direction. This implies an \textbf{elastic} collision.
+
+We note though that because of the plane wave nature of the projectile, we can't separate it from the target. So we make a condition: at infinite prior time, the plane wave solution is correct: $$\Psi(t=-\infty,\vec{x}) = \frac{1}{(2\pi)^{3/2}}e^{-iEt/\hbar + ikz}=\phi(t,x).$$ So we solve the problem subject to this condition. Far in the past, this is solving the free-particle Schrodinger equation: $$t\to -\infty: \ \ \ \Ham_o\Psi = \Ham_o\phi = E\phi.$$ At intermediate times: $$\Ham_o+V= \Ham, \ \ \ \Ham\Psi = E\Psi.$$ At far future times, it is again a free particle but no longer a plane wave: $$\Ham_o\tilde{\phi} = E\tilde{\phi}.$$ The wavefunction loses no energy, so all of the eigenvalue energies are the same in time. We have cast the problem now into a stationary problem, with no time-dependence except in the boundary condition.
+
+We state the Lippmann-Schwinger equation: $$i\hbar\ptl_t \psi^\dagger(t,\vec{x}) = \Ham \psi^\dagger(t,\vec{x}), \ \ \ \psi^\dagger(t=-\infty,\vec{x})=\phi(t,\vec{x}).$$ We solve this using the ansatz $$\psi^\dagger(t,\vec{x})= \left[\phi(\vec{x}) + \delta\psi^\dagger(\vec{x})e^{\epsilon t}\right] e^{-iEt/\hbar}.$$ For $\epsilon>0$, as $t\to -\infty$ the $\delta\psi^\dagger$ term goes to zero, as we require for the boundary condition. The energy conservation is brought about by the overall phase. We put this into the equation: $$E(\phi + \delta\psi^\dagger e^{\epsilon t})+i\hbar\epsilon\delta\psi^\dagger e^{\epsilon t} = (\Ham_o+V)(\phi+\delta\psi e^{\epsilon t}).$$ We subtract away the $\Ham_o\phi$ terms to find $$(E+i\hbar\epsilon)\delta\psi^\dagger e^{\epsilon t} = \Ham_o\delta\psi^\dagger e^{\epsilon t}+V\psi^\dagger,$$ in which we can formally solve for $\delta\psi^\dagger$: $$\delta\psi^\dagger e^{\epsilon t} = \frac{V}{E-\Ham_o + i\hbar\epsilon} \psi^\dagger.$$ We look at the limit where $\epsilon\to 0$, and note than in principle $E$ could be equal to the value from $\Ham_o$ since we haven't projected anything out. So without including the $\epsilon$ there would be no solution. We rescale $\epsilon$ and take the limit on the left hand side of the equation only, leaving $$\delta\psi^\dagger = \frac{V}{E-\Ham_o+i\epsilon}\psi^\dagger\implies \psi^\dagger = \phi + \frac{V}{E-\Ham_o+i\epsilon}\psi^\dagger.$$ This is not really even a solution, given the fact that the answer is on both sides. 
+
+If the interaction is small, like in perturbation theory, to leading order the solution is just $\psi^\dagger=\phi$. But we note that the actual solution is an integral solution, when projected into configuration space. That is, it gives the solution in terms of the integral of itself.
+
+In a basis-less form, \begin{align*}
+|\psi^\dagger\ra &= |\phi\ra + \frac{V}{E-\Ham_o+i\epsilon}V|\psi^\dagger\ra, \ \ \to \\ \la\vec{x}|\psi^\dagger\ra = \psi^\dagger(\vec{x}) &= \phi(\vec{x}) + \la \vec{x}|\frac{V}{E-\Ham_o+i\epsilon}V|\psi^\dagger\ra\\
+&= \phi(\vec{x}) + \int d\vec{x}' \la \vec{x}|\frac{1}{E-\Ham_o+i\epsilon}|\vec{x}'\ra V(\vec{x}')\psi^\dagger(\vec{x}'), \ \ \ \ \Ham_o=-\frac{\hbar^2\nabla^2}{2m}.
+\end{align*}
+
+We note the matrix element within the integral $\la \vec{x}|\sim|\vec{x}'\ra$ is a Green's function, so the correction is the convolution of $G$ acting on the potential and correction.
+
+\subsection{Green's Function}
+
+We have $$G^\dagger(\vec{x}-\vec{x}') = \frac{\hbar^2}{2m}\la\vec{x} | \frac{1}{E-\Ham_o + i\epsilon} |\vec{x}'\ra,$$ where the dagger on $G$ corresponds to the plus sign in front of the imaginary term. The $\vec{x}-\vec{x}'$ argument arises from the fact that the Laplacian operator is translationally invariant. We note that $G$ is a function like a potential, and obeys a Helmholtz type equation: $$\nabla^2 G^\dagger(\vec{x}-\vec{x}') = \frac{\hbar^2}{2m}\nabla^2 \la \vec{x} | \frac{1}{E-\Ham_o+i\epsilon}|\vec{x}'\ra = -\Ham_o\la\vec{x}| \frac{1}{E-\Ham_o+i\epsilon}|\vec{x}'\ra.$$ We can expand the right hand side as $-\Ham_o = E-\Ham_o-E$, to make it reminiscent of the denominator of the matrix element operator. We note that earlier we could not take the limit of $\epsilon\to 0$ here because the denominator could be singular, but by multiplying the numerator we can remove the pole, and take the limit. So \begin{align*}
+\nabla^2 G^\dagger(\vec{x}-\vec{x}') &= \la\vec{x}|\frac{E-\Ham_o}{E-\Ham_o+i\epsilon} |\vec{x}'\ra - E\frac{2m}{\hbar^2} \left(\frac{\hbar^2}{2m}\la\vec{x}|\frac{1}{E-\Ham_o+i\epsilon}|\vec{x}'\ra\right) \implies \\
+(\nabla^2+\vec{k}^2)G^\dagger(\vec{x}-\vec{x}') &= \delta(\vec{x}-\vec{x}'),
+\end{align*} where we've used $\nabla^2 = 2m\Ham_o/\hbar^2$ and that $E=\hbar^2k^2/2m$. The final equation is the Helmholtz-like equation, yielding a potential created by some kind of charge shifted by $k^2$. 
+
+Explicitly, we solve for $G$: $$G^\dagger(\vec{x})=\frac{\hbar^2}{2m} \la \vec{x} | \frac{1}{E-\Ham_o+i\epsilon}|\vec{0}\ra,$$ where we use the zero vector because it is translationally invariant. We note that $\nabla^2$ is diagonal in momentum space so we project: $$G^\dagger(\vec{x}) = \frac{\hbar^2}{2m} \int d\vec{q} \la\vec{x}|\vec{q}\ra \frac{1}{E-\frac{\hbar^2q^2}{2m} + i\epsilon} \la \vec{q}|\vec{0}\ra = \frac{\hbar^2}{2m}\int \frac{d\vec{q}}{(2\pi)^3} \frac{e^{i\vec{q}\cdot\vec{x}}}{E-\frac{\hbar^2q^2}{2m} + i\epsilon} $$ which simplifies to $$G^\dagger(\vec{x}) = \int \frac{d\vec{q}}{(2\pi)^3} \frac{e^{i\vec{q}\cdot\vec{x}}}{k^2-q^2+i\epsilon} = \frac{2\pi}{(2\pi)^3} \int_0^\infty \frac{q^2dq}{k^2-q^2+i\epsilon}\cdot \left[\frac{e^{iqx\cos\theta}}{-iqx}\right]_0^\pi= \frac{1}{(2\pi)^2}\int_{-\infty}^{\infty} \frac{qdq}{ix}\frac{e^{iqx}}{k^2-q^2+i\epsilon}.$$ There are poles here, and it is inherently complex so we lift to the complex plane, connect the contour with a vanishing integral by way of an arc in the upper half plane, and we find $$G^\dagger(\vec{x}) = \frac{-1}{4\pi|x|}e^{ik|x|}.$$ This is different from the Coulombic screening, which arises from the $-k$ in the Helmholtz type equation. That leads to real screening, and here it is not.
+
+In terms of $G$, now, the solution to the Lippmann-Schwinger equation: $$\psi^\dagger(\vec{x}) = \phi(\vec{x}) -\frac{2m}{\hbar^2}\frac{1}{4\pi} \int d\vec{x} \frac{e^{ik|\vec{x}-\vec{x}'|}}{|\vec{x}-\vec{x}'|} V(\vec{x}')\psi^\dagger(\vec{x}').$$ 
+
+\subsection{Born Approximation}
+
+We note we can solve this equation by iteration. Expanding in just one iteration: $$\psi^\dagger(\vec{x}) = \phi(\vec{x}) -\frac{2m}{\hbar^2}\frac{1}{4\pi} \int d\vec{x} \frac{e^{ik|\vec{x}-\vec{x}'|}}{|\vec{x}-\vec{x}'|} V(\vec{x}')\left[\phi(\vec{x}')-\frac{2m}{\hbar^2}\frac{1}{4\pi}\int d\vec{x}'' \frac{e^{ik|\vec{x}'-\vec{x}''|}}{|\vec{x}'-\vec{x}''|}V(\vec{x}')\psi^\dagger(\vec{x}'')\right]$$ We see in this way that iterations are expansions of orders of $V$. The Born approximation is similar to perturbation theory, in that we neglect $O(V^2)$. This yields $$\psi^\dagger_B(\vec{x})= \phi(\vec{x}) -\frac{2m}{\hbar^2}\frac{1}{4\pi} \int d\vec{x} \frac{e^{ik|\vec{x}-\vec{x}'|}}{|\vec{x}-\vec{x}'|} V(\vec{x}')\phi(\vec{x}').$$ We recall for static perturbation theory, the first order wave function correction was a sum $$\sum_{n\neq A} \frac{V}{E_A-E_n}\phi_n$$, where we projected out the equivalent states. Here, though, we didn't need to since the imaginary term turned it into a Green's function.
+
+
+
+
+
+\section{Day 25: 4/24}
+
+\subsection{Local Approximation}
+
+We recall we found an answer to the scattering wavefunction $$\psi^+(x)=\phi(x)+\frac{2m}{\hbar^2}\int dx' G^+(x,x')V(x')\psi^+(x')$$ by disguising the scattering in terms of a stationary state problem. Here, we note that $$G^+(x,x')=\frac{-1}{4\pi} \frac{e^{ik|x-x'|}}{|x-x'|}, \ \ \ E=\frac{h^2k^2}{2m},$$ where we note that $x,x'$ are vectors in general and the scattering is elastic. The integration occurs over all points of the target's potential, beyond which there is no support. If the size of the target $R$ is such that $\lambda/R\gg 1$ and $|x'|\ll |x|$, we can expand $$|x-x'| = \sqrt{x^2+x^{'2}-2x\cdot x'}\approx \sqrt{x^2-2x\cdot x'} \simeq x(1-x'\hat{x}).$$ This yields the local approximation $$\psi^+(x)=\phi(x)+\frac{2m}{\hbar^2}\frac{-1}{4\pi}\frac{e^{ik|x|}}{|x|}\int dx' e^{-ik\cdot (x'\cdot \hat{x})} V(x')\psi^+(x').$$ We note here that $\hat{x}$ here is the vector from the origin to the point on the outgoing scattered wave of interest. Since $|k|=|k'|$, we have that $\vec{k}' = k(\hat{x}\cdot\vec{x}')$. We call $$f(\vec{k},\vec{k}') = (2\pi)^{3/2}\frac{2m}{\hbar^2}\frac{-1}{4\pi}\int d\vec{x}' e^{-i\vec{k}'\cdot\vec{x}'} V(\vec{x}')\psi^+(\vec{x}'),$$ so that we simplify $$\psi^+(\vec{x})=\frac{1}{(2\pi)^{3/2}}\left[e^{i\vec{k}\cdot\vec{x}}+\frac{1}{|\vec{x}|} e^{i\vec{k}\cdot\vec{x}}f(\vec{k},\vec{k}')\right].$$ Thus we see the result is a combination of the linear plane wave and a spherical wave, falling off as $1/r$. We note that $f(\vec{k},\vec{k}')$ only depends on $\vec{k}$ explicitly, through the contained $\psi^+(\vec{x})$.
+
+\subsection{Cross Section}
+
+This time it is entirely a quantum mechanical problem. Here, the infinitesimal cross section is defined as the probability current scattered through $r^2d\Omega$ normalized by the incident current, where $\vec{J}=\psi^\dagger\hat{v}\psi$: $$\frac{d\sigma}{d\Omega}=\frac{|\vec{J}|_s\cdot r^2}{|\vec{J}|_i}.$$ The incident probability current is a linear plane wave, and the outgoing is spherical. We define the probability current in a Hermitian way: $$\vec{J}=\psi^\dagger\frac{\mom}{m}\psi = \frac{\hbar}{2im}\left[\psi^\dagger\nabla\psi - \nabla\psi^\dagger\psi\right].$$ The incoming wave is a momentum eigenstate, so $\vec{J}_i=\frac{\hbar\vec{k}}{m}(2\pi)^{-3}$. The scatter: $$\vec{J}_s = \frac{\hbar(k\hat{r}=\vec{k}')}{m}\cdot\frac{1}{(2\pi)^3} \frac{|f|}{r^2}\implies \frac{d\sigma}{d\Omega}=|f|^2.$$
+
+Returning to the Born approximation, we see that $f$ is simple: \begin{align*}
+\psi^+(\vec{x})&=\phi(\vec{x})+\frac{2m}{\hbar^2}\frac{-1}{4\pi}\frac{e^{ik|\vec{x}|}}{|\vec{x}|} \int d\vec{x}' e^{-i\vec{k}'\cdot\vec{x}'} V(\vec{x}')\phi(\vec{x}')\\
+&\simeq \frac{1}{(2\pi)^{3/2}}\left[e^{i\vec{k}\cdot\vec{x}}+\frac{1}{|\vec{x}|} e^{i\vec{k}\cdot\vec{x}}f_B(\vec{k},\vec{k}')\right],\\
+f_B(\vec{k},\vec{k}') &= \frac{2m}{\hbar^2}\frac{-1}{4\pi} \int d\vec{x}' e^{-i\vec{k}'\cdot\vec{x}'}V(\vec{x}')e^{i\vec{k}\cdot\vec{x}}(2\pi)^{3/2}\\ &= \frac{2m}{\hbar^2}\frac{-1}{4\pi} \int d\vec{x}' e^{-i\vec{q}\cdot\vec{x}'}V(\vec{x}')
+\end{align*}
+
+\subsection{Examples}
+
+We consider $V(x)=A\delta(\vec{x})$, so that $$f_B(\vec{q}) = A\frac{2m}{\hbar^2}\frac{-1}{4\pi}(2\pi)^{3/2}\implies \frac{d\sigma}{d\Omega} = \left(\frac{mA}{2\pi\hbar^2}\right)^2 (2\pi)^3.$$
+
+Now suppose $V(\vec{x}) = A\delta(|\vec{x}|-R).$ Then $$f_B(\vec{q}) = A\frac{2m}{\hbar^2}\frac{-1}{4\pi}(2\pi)^{3/2}\int d\phi \int \dots ? \dots = \frac{2m}{\hbar^2}AR^2 \frac{\sin(qR)}{qR}.$$ 
+
+\subsection{T-Matrix}
+
+We recall, in a basis-less form, $$|\psi^+\ra = |\phi\ra + \frac{1}{E-\Ham_o+i\epsilon}V|\psi^+\ra\approx |\phi\ra + G^+V|\psi^+\ra.$$ We define $T$ such that $T|\phi\ra = V|\psi^+\ra$. We left multiply by $V$ now and see $T = V+VG^+ T.$ We want to know the relationship between $T$ and $f$.
+
+\begin{align*}
+f(\vec{k},\vec{k}')&=\frac{2m}{\hbar^2}{-1}{4\pi}(2\pi)^{3/2}\int d\vec{x}' e^{-i\vec{k}'\cdot\vec{x}'} V(\vec{x}')\psi^+(\vec{x}')\\
+&= \frac{2m}{\hbar^2}\frac{-1}{4\pi} (2\pi)^3 \la \vec{k}'|T|\vec{k}\ra.
+\end{align*}
+
+
+\subsection{Optical Theorem}
+
+$$\sigma_{tot}=\frac{4\pi}{k}\Im f(\vec{k},\vec{k}').$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{document}

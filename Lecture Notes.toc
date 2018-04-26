@@ -1,10 +1,10 @@
 \select@language {english}
-\contentsline {section}{\numberline {1}Day 1: 1/23}{3}{section.1}
-\contentsline {subsection}{\numberline {1.1}Continuous Symmetries}{3}{subsection.1.1}
-\contentsline {section}{\numberline {2}Day 2: 1/25}{6}{section.2}
-\contentsline {subsection}{\numberline {2.1}Continuous Symmetries}{6}{subsection.2.1}
+\contentsline {section}{\numberline {1}Day 1: 1/23}{4}{section.1}
+\contentsline {subsection}{\numberline {1.1}Continuous Symmetries}{4}{subsection.1.1}
+\contentsline {section}{\numberline {2}Day 2: 1/25}{7}{section.2}
+\contentsline {subsection}{\numberline {2.1}Continuous Symmetries}{7}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Spin Precession}{7}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Euler Representation}{7}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.3}Euler Representation}{8}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}Finite Dimensional Representations}{8}{subsection.2.4}
 \contentsline {section}{\numberline {3}Day 3: 1/30}{9}{section.3}
 \contentsline {subsection}{\numberline {3.1}Euler Rotation Representation}{9}{subsection.3.1}
@@ -87,3 +87,13 @@
 \contentsline {subsection}{\numberline {23.2}Mean Field Approximation}{60}{subsection.23.2}
 \contentsline {subsubsection}{\numberline {23.2.1}Mean Field Approximation}{61}{subsubsection.23.2.1}
 \contentsline {subsubsection}{\numberline {23.2.2}Thomas-Fermi Approximation}{62}{subsubsection.23.2.2}
+\contentsline {section}{\numberline {24}Day 24: 4/19}{62}{section.24}
+\contentsline {subsection}{\numberline {24.1}Scattering}{62}{subsection.24.1}
+\contentsline {subsection}{\numberline {24.2}Green's Function}{64}{subsection.24.2}
+\contentsline {subsection}{\numberline {24.3}Born Approximation}{65}{subsection.24.3}
+\contentsline {section}{\numberline {25}Day 25: 4/24}{66}{section.25}
+\contentsline {subsection}{\numberline {25.1}Local Approximation}{66}{subsection.25.1}
+\contentsline {subsection}{\numberline {25.2}Cross Section}{66}{subsection.25.2}
+\contentsline {subsection}{\numberline {25.3}Examples}{67}{subsection.25.3}
+\contentsline {subsection}{\numberline {25.4}T-Matrix}{67}{subsection.25.4}
+\contentsline {subsection}{\numberline {25.5}Optical Theorem}{68}{subsection.25.5}
