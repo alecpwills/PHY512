@@ -1021,7 +1021,31 @@ f(\vec{k},\vec{k}')&=\frac{2m}{\hbar^2}{-1}{4\pi}(2\pi)^{3/2}\int d\vec{x}' e^{-
 
 $$\sigma_{tot}=\frac{4\pi}{k}\Im f(\vec{k},\vec{k}').$$
 
+\section{Day 26: 4/26}
 
+\subsection{Optical Theorem}
+
+This is a statement that the total cross section as a function of the incoming wavenumber vector $\vec{k}$ is $$\sigma_{tot}(\vec{k})=\frac{4\pi}{k}\Im f(\vec{k},\vec{k}).$$ We prove this now.
+
+Recall that $\sigma_{tot}=\int d\Omega_{\vec{k'}}|f(\vec{k},\vec{k}')|^2$ by definition. The Lippmann-Schwinger equation tells us that $|\psi^+\ra = |\phi\ra + G^+V|\psi^+\ra$, and we note that $T|\phi\ra = V|\psi^+\ra$. So we left multiply the LS equation by $V$ to find $$T=V+VG^+T\implies T(\Id - VG^+)=V \implies T = (\Id+VG^+)^{-1} V,$$ yielding the formal solution in the right. This is a geometric series of sorts, and the Born approximation yields just $T\simeq V$. Note that $V$ is Hermitian, but $G^+$ is not, so $T$ will not be Hermitian. From the first equation, we have $$T^\dagger = V+T^\dagger G^- V,$$ and multiplying both this and the first equation on the right and left respectively by $T^\dagger V^{-1}$ or $V^{-1}T$, we get $$T^\dagger V^{-1} T = T^\dagger + T^\dagger G^+ T = T+T^\dagger G^- T\implies T^\dagger-T = T^\dagger(G^--G^+)T.$$ This is to all orders, as no approximations have been made. We note that $T^\dagger-T$ selects out the imaginary part of the operator $T$, so in the Born approximation there is no imaginary part since $V$ is Hermitian. In this case, the LHS is zero but the RHS is not. This violates the "unitarity" condition.
+
+We recall that the scattering amplitude $f$ is a matrix element of the $T$ matrix: $$\la \vec{k}'|T^\dagger-T|\vec{k}\ra = \la \vec{k}'|T^\dagger(G^--G^+)T|\vec{k}\ra.$$ We recall that in the limit $\epsilon\to 0$, the $G$ operators have a principal value part and a delta function part, and the conjugation and subtraction selects out the delta function part (as it is imaginary). Sine $T^\dagger-T = -2i \Im T$, and $G^-G^+=2i\pi \delta(E-\Ham_o),$ we consider only the forward facing primed wavenumber matrix element: $$\la\vec{k}|\Im T|\vec{k}\ra = \la \vec{k}|-\pi T^\dagger \delta(E-\Ham_o)T|\vec{k}\ra.$$ We filter in momentum space, since $\Ham_o$ is diagonal here, and note that $\int d^3k' = \int k^{'2} dk d\Omega_{k'}$. Thus we have $$\Im \la \vec{k}|T|\vec{k}\ra = \frac{-\pi mk}{\hbar^2}\int d\Omega_{k'}|\la \vec{k}|T|\vec{k}'\ra|^2.$$ Recalling that $$f(\vec{k},\vec{k}') = \frac{2m}{\hbar^2}\frac{-1}{4\pi} (2\pi)^3 \la \vec{k}|T|\vec{k}'\ra,$$ we can substitute in and find the result.
+
+So far we've been scattering using plane waves as the initial form, but this is typically a bad basis as it breaks the symmetries that are usually present, i.e. spherical ones.
+
+\subsection{Spherical Basis}
+
+We note the plane wave basis diagonalizes the free particle $\Ham_o=\frac{\mom^2}{2m}$. But we want to diagonalize $\nabla^2$ in the spherical basis, which gives the condition that $[L^2,L_z,\Ham_o]=0$ and yields a descriptive quantum number set $|Elm\ra$. We know that the solutions will involve Bessel functions.
+
+We want to transform $|\vec{k}\ra \to |Elm\ra,$ where both are free particle states. Projecting, we know that $\la \vec{x}|Elm\ra = C_1 J_l(kr)Y_l^m(\hat{x})$, where we project onto spherical coordinates, whereas the plane-wave basis gives $\la\vec{x}|\vec{k}\ra = (2\pi)^{-3/2}e^{i\vec{k}\cdot\vec{x}}$. What about projecting $\la\vec{k}|Elm\ra$? This will be the Fourier transform of the projection onto coordinate space, and of the form $\la\vec{k}|Elm\ra = C_2 \delta(E-\frac{\hbar^2k^2}{2m})Y_l^m(\hat{k})$. 
+
+We want to fix the normalization constants now. Recall that the basis is complete, so $\sum |Elm\ra\la Elm|=\Id$ and $\la E'l'm'|Elm\ra=\delta_{EE'}\delta_{ll'}\delta_{mm'}$. We use the orthogonality and project into coordinate space: $$\delta_{EE'}\delta_{ll'}\delta_{mm'} = |C_1|^2\int d\vec{x} J_{l'}(kr')J_l(kr)Y_{l'}^{m'*}(\hat{x})Y_l^m(\hat{x}).$$ $C_1$ could in principle depend on the numbers $Elm$, but dependence on $m$ would break spherical symmetry so it will only depend on $El$.
+
+The measure, now, is $d\vec{x}\to r^2drd\Omega_{\hat{x}}$. The spherical harmonics, though, contain all the angular information and are orthogonal: $$\int d\Omega Y_{l'}^{m'*}Y_l^m\propto \delta_{ll'}\delta_{mm'}.$$ The Bessel functions are also orthogonal, and have a prefactor of some sort. In the end, we get $$|C_1|^2=\frac{2mk}{\pi\hbar^2}.$$
+
+To fix $C_2$, we use the plane wave decomposition, writing the plane wave form in the spherical basis: $$\la\vec{x}|\vec{k}\ra = \frac{1}{(2\pi)^{3/2}}e^{i\vec{k}\cdot\vec{x}} = \sum_{Elm} \la \vec{x}|Elm\ra \la Elm|\vec{k}\ra = C_1C_2^*\sum_{Elm} \left[J_l(kr)Y_l^m(\hat{x})\right]\left[\delta(E-\frac{\hbar^2k^2}{2m})Y_l^{m*}(\hat{k})\right]. $$ The delta function kills the sum over $E$, and some bad algebra in class finally yields, with a phase convention: $$C_1=\frac{i^l}{\hbar}\sqrt{\frac{2mk}{\hbar}}, \ \ \ C_2=\frac{\hbar}{\sqrt{mk}}.$$
+
+We now want to re-express everything in this basis: $T$, $f$, etc. Since $T=V+VG^+T,$ if we have $[L^2,V]=[V,L_z]=0$ then $[T, L^2]=[T,L_z]=0$ as well, so $T$ is diagonal in the spherical basis, whereas it wasn't in the plane wave: $$\la E'l'm'|T|Elm\ra = T_l(E)\delta_{EE'}\delta_{ll'}\delta_{mm'}.$$ We need to connect $f(\vec{k},\vec{k}')\leftrightarrow T_l(E)$. Since $\frac{d\sigma}{d\Omega}=|f(\vec{k},\vec{k}')|^2$, we express $$\la \vec{k}'|T|\vec{k}\ra = \sum_{Elm, E'l'm'} \la \vec{k}'|E'l'm'\ra \la E'l'm' |T|Elm\ra \la Elm|\vec{k}\ra.$$ But $T$ is diagonal now, and more bad algebra yields $$f(\vec{k},\vec{k}') = \sum_l (2l+1)P_l(\cos\theta)\left[\frac{-\pi}{k}T_l(E)\right],$$ the partial wave decomposition where $f_l(E)=-\frac{\pi}{k}T_l(E).$
 
 
 

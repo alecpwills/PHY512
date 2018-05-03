@@ -97,3 +97,6 @@
 \contentsline {subsection}{\numberline {25.3}Examples}{67}{subsection.25.3}
 \contentsline {subsection}{\numberline {25.4}T-Matrix}{67}{subsection.25.4}
 \contentsline {subsection}{\numberline {25.5}Optical Theorem}{68}{subsection.25.5}
+\contentsline {section}{\numberline {26}Day 26: 4/26}{68}{section.26}
+\contentsline {subsection}{\numberline {26.1}Optical Theorem}{68}{subsection.26.1}
+\contentsline {subsection}{\numberline {26.2}Spherical Basis}{69}{subsection.26.2}
