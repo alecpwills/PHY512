@@ -102,3 +102,5 @@
 \contentsline {subsection}{\numberline {26.2}Spherical Basis}{69}{subsection.26.2}
 \contentsline {section}{\numberline {27}Day 27: 5/01}{70}{section.27}
 \contentsline {subsection}{\numberline {27.1}Spherical Basis}{70}{subsection.27.1}
+\contentsline {subsection}{\numberline {27.2}S Matrix}{71}{subsection.27.2}
+\contentsline {subsection}{\numberline {27.3}Hard Core Potential}{72}{subsection.27.3}
