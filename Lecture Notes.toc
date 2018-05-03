@@ -100,3 +100,5 @@
 \contentsline {section}{\numberline {26}Day 26: 4/26}{68}{section.26}
 \contentsline {subsection}{\numberline {26.1}Optical Theorem}{68}{subsection.26.1}
 \contentsline {subsection}{\numberline {26.2}Spherical Basis}{69}{subsection.26.2}
+\contentsline {section}{\numberline {27}Day 27: 5/01}{70}{section.27}
+\contentsline {subsection}{\numberline {27.1}Spherical Basis}{70}{subsection.27.1}

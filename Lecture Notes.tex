@@ -1049,8 +1049,22 @@ We now want to re-express everything in this basis: $T$, $f$, etc. Since $T=V+VG
 
 
 
+\section{Day 27: 5/01}
 
+\subsection{Spherical Basis}
 
+We recall last time we were trying to express the $T$ matrix in a spherical basis, which is useful if $V$ is spherically symmetric. Note that in this basis, $T$ is diagonal. That is, if $V$ is spherically symmetric, $[D(R),T]=0$ so $T$ commutes with $L^2$ and $L_z$ as well, thus we assume a basis of $|Elm\ra$.
+
+Since we originally derived everything in the plane wave basis, we must reexpress the operators and states in the spherical basis: $|k\ra \to |Elm\ra$. But we know the form of the coordinate space representations of $|Elm\ra$ from solving the spherical Schrodinger equation: $$\la x|Elm\ra = c_l^1 j_l(kr) Y_l^m(\hat{r}).$$ Now in the momentum basis the free-particle Hamiltonian is diagonal, so we end up with $$\la k|Elm\ra = c_l^2 \delta\left(E-\frac{\hbar^2k^2}{2m}\right)Y_l^m(\hat{k}).$$ We recall further that $T|k\ra = V|\psi^+\ra$, and $$f(k, k') = \frac{2m}{
+hbar^2} \frac{-1}{4\pi} (2\pi)^3 \la k'|T|k\ra.$$ The first fraction comes from normalizing the Green's function, the second from solving its source, and the $2\pi$ from the plane wave factors. Expressing in a spherical basis by inserting two filters yields $$f(k, k') = \sum_l (2l+1) P_l(\cos\theta) f_l,$$ where $f_l = -\frac{\pi}{k}T_l(E).$ 
+
+Noting that $\frac{d\sigma}{d\Omega} = |f(k,k')|^2$ and by the optical theorem $\sigma_t = \frac{4\pi}{k} \Im f(k,k)$, and using $\theta=0$ so the Legendre polynomial all turn to 1, and other work? yields $$\sigma_t = \sum_l (2l+1) \frac{2\pi^3}{k^2}|T_l|^2$$ or something. 
+
+No, one uses the optical theorem to express in terms of the sum of the imaginary parts of $T_l$ and then the actual definition to integrate and square to find the $T_l^2$ term.
+
+\subsection{S Matrix}
+
+The optical theorem is a statement of conservation of probability. The imaginary part of $T$ is related to its absolute value squared. This reflects on the unitarity of the problem. Recall the scattering amplitude in general is $$
 
 
 
